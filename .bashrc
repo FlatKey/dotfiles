@@ -7,6 +7,8 @@ fi
 
 # User specific aliases and functions
 alias cp="cp -i"
+alias df="df -hT"
+alias di="df -i"
 alias ll="ls -lisah"
 alias lz="ll -Z"
 alias mv="mv -i"

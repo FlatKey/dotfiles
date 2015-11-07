@@ -11,7 +11,7 @@ filetype indent plugin on
 syntax on
 
 " Set color schema for dark backgrounds
-set bg=dark
+set background=dark
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " four characters wide.
@@ -37,4 +37,23 @@ set laststatus=2
 
 " Display line numbers on the left and set the numbering color scheme
 set number
-highlight LineNr  ctermfg=darkgrey   ctermbg=black
+
+" Set informations and style of the status line
+set statusline=[%n]\ %F\ [%{strlen(&fenc)?&fenc:'none'},%{&ff},%{FileSize()}]%(\ [%M%R%H%W%Y]%)%=\ [%02v\ \-\ %l\/%L\ \-\ %p%%]
+
+" Set individual colors
+highlight LineNr  		ctermfg=darkgrey	ctermbg=black
+highlight StatusLine	ctermfg=black		ctermbg=darkgrey
+
+" Functions
+function! FileSize()
+	let bytes = getfsize(expand("%:p"))
+	if bytes <= 0
+		return ""
+	endif
+	if bytes < 1024
+		return bytes
+	else
+		return (bytes / 1024) . "K"
+	endif
+endfunction
