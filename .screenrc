@@ -1,0 +1,16 @@
+startup_message off
+hardstatus alwayslastline
+hardstatus string '%{= kG} %{G}'$LOGNAME'@%H %{g}| %{= kw}%?%-w%?%{r}[%{W}%n %t%?(%u)%?%{r}]%{w}%?%+w%?%?%= %{g} |%{G} %d/%m/%Y %c:%s | Load: %l %{W}%{g}'
+defscrollback 9999
+vbell off
+
+# NUM0 - create new windows session and ask for a title
+register n "^a^c^aA"
+bindkey "^[[2~" process n 
+# NUM3  - kill current window session
+bindkey "^[[6~" kill
+# NUM9 - show window list
+register w "^a\""
+bindkey "^[[5~" process w
+# NUM, - enter copy/scrollback mode in current window
+bindkey "^[[3~" copy

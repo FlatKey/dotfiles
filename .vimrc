@@ -49,7 +49,7 @@ highlight StatusLine	ctermfg=black		ctermbg=darkgrey
 function! FileSize()
 	let bytes = getfsize(expand("%:p"))
 	if bytes <= 0
-		return ""
+		return "0B"
 	endif
 	if bytes < 1024
 		return bytes
