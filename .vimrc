@@ -13,6 +13,11 @@ syntax on
 " Set color schema for dark backgrounds
 set background=dark
 
+" Indentation settings for using spaces instead of tabs.
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
 " Indentation settings for using hard tabs for indent. Display tabs as
 " four characters wide.
 set shiftwidth=4
