@@ -6,13 +6,12 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-alias cp="cp -i"
+alias cp="cp -iZ"
 alias cl="clear"
 alias df="df -hT"
 alias di="df -i"
-alias ll="ls -lisah"
-alias lz="ll -Z"
-alias mv="mv -i"
+alias ll="ls -lisahZ"
+alias mv="mv -iZ"
 alias rm="rm -i"
 
 function gfind {
